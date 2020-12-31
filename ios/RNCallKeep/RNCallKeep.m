@@ -503,9 +503,10 @@ RCT_EXPORT_METHOD(isCallActive:(NSString *)uuidString)
     if (settings[@"maximumCallsPerCallGroup"]) {
         providerConfiguration.maximumCallsPerCallGroup = [settings[@"maximumCallsPerCallGroup"] integerValue];
     }
-    if (settings[@"imageName"]) {
-        providerConfiguration.iconTemplateImageData = UIImagePNGRepresentation([UIImage imageNamed:settings[@"imageName"]]);
-    }
+
+    UIImage *callkitIcon = [UIImage imageNamed:@"Logo"];
+    providerConfiguration.iconTemplateImageData = UIImagePNGRepresentation(callkitIcon);
+
     if (settings[@"ringtoneSound"]) {
         providerConfiguration.ringtoneSound = settings[@"ringtoneSound"];
     }
